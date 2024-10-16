@@ -1,3 +1,26 @@
+# HumanEval-ja: Hand-Written Evaluation Set for Japanese
+
+## Environment setup
+
+```sh
+git clone https://github.com/openai/human-eval
+pip install -e human-eval
+```
+
+## How to use
+
+- Edit `human-eval-ja.sh` like below.
+
+```sh
+python generate_response.py --model_name llm-jp/llm-jp-3-1.8b-instruct --num_trial 10
+evaluate_functional_correctness samples_at_10.jsonl llm-jp/llm-jp-3-1.8b-instruct
+```
+
+- `generate_response.py` generates responses of HumanEval-ja
+  - `model_name` stands for the model name that you want to evaluate
+  - `num_trial` stands for how many times your model will generate responses
+
+
 # HumanEval: Hand-Written Evaluation Set 
 
 This is an evaluation harness for the HumanEval problem solving dataset
