@@ -29,7 +29,7 @@ def create_prompts(problems: Dict[str, Dict], tokenizer: AutoTokenizer) -> List[
     # ]
     messages_list = list()
     for problem in problems.values():
-        messages_list.append({"role": "user", "content": problem['prompt']})
+        messages_list.append({"role": "user", "content": problem['prompt_ja']})
     print("messages_list")
     print(messages_list)
 

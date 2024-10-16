@@ -5,13 +5,13 @@
 
 ## Features
 
-- support HumanEval-ja
+- **support HumanEval-ja**
   - you can evaluate coding ability of your LLMs which can handle Japanese
 
-- support vLLM
+- **support vLLM**
   - you can reduce inference time via [vLLM](https://github.com/vllm-project/vllm) library
 
-- support apply_chat_templates function
+- **support apply_chat_templates function**
   - you can directly use the latest LLM without modifying any chat templates
 
 ## Environment setup
@@ -31,7 +31,7 @@ pip install -e .
 
 ## How to use
 
-1. You can change default sampling parameter from [here](https://github.com/ohashi3399/human-eval-ja/blob/master/generate_response.py#L12)
+1. You can change default sampling parameter from [here](https://github.com/ohashi3399/human-eval-ja/blob/master/generate_response.py#L14)
 
 ```python
 def create_sampling_params() -> SamplingParams:
