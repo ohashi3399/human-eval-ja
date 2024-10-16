@@ -5,7 +5,8 @@ import os
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-HUMAN_EVAL = os.path.join(ROOT, "..", "data", "HumanEval.jsonl.gz")
+# HUMAN_EVAL = os.path.join(ROOT, "..", "data", "HumanEval.jsonl.gz")
+HUMAN_EVAL = os.path.join(ROOT, "..", "data", "HumanEval-ja.jsonl.gz")
 
 
 def read_problems(evalset_file: str = HUMAN_EVAL) -> Dict[str, Dict]:
@@ -16,7 +17,8 @@ def stream_jsonl(filename: str) -> Iterable[Dict]:
     """
     Parses each jsonl line and yields it as a dictionary
     """
-    if filename.endswith(".gz"):
+    if filename.endswith("ja.jsonl.gz"):
+    # if filename.endswith(".gz"):
         with open(filename, "rb") as gzfp:
             with gzip.open(gzfp, 'rt') as fp:
                 for line in fp:
