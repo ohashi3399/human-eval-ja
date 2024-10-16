@@ -6,7 +6,7 @@
 ## Environment setup
 
 ```sh
-git clone https://github.com/ohashi3399/human-eval-ja.git
+git clone https://github.com/ohashi3399/human-eval-ja.git && cd human-eval-ja
 pip install -e .
 ```
 
@@ -19,6 +19,16 @@ pip install -e .
 > `execution.py` for more information and instructions.**
 
 ## How to use
+
+1. You can change default sampling parameter from [here](https://github.com/ohashi3399/human-eval-ja/blob/master/generate_response.py#L12)
+
+```python
+def create_sampling_params() -> SamplingParams:
+    """サンプリングパラメータを設定する"""
+    return SamplingParams(
+        max_tokens=2048, temperature=0.0, top_p=1.0, repetition_penalty=1.05
+    )
+```
 
 1. Edit `human-eval-ja.sh` like below.
 
