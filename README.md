@@ -6,7 +6,7 @@
 ## Environment setup
 
 ```sh
-git clone https://github.com/ohashi3399/human-eval-ja.git
+git clone https://github.com/ohashi3399/human-eval-ja.git && cd human-eval-ja
 pip install -e .
 ```
 
