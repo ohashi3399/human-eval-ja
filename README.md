@@ -1,18 +1,18 @@
 # HumanEval-ja: Hand-Written Evaluation Set for Japanese
 
-- This repository is a fork of [HumanEval: Hand-Written Evaluation Set](https://github.com/openai/human-eval)
-  - supports [HumanEval-ja](https://huggingface.co/datasets/HachiML/humaneval-ja-v0.6)
+- This repository is a fork of [HumanEval: Hand-Written Evaluation Set](https://github.com/openai/human-eval) and an extention of Japanese language
 
 ## Features
 
 - **support HumanEval-ja**
-  - you can evaluate coding ability of your LLMs which can handle Japanese
+  - evaluate coding ability of your LLMs which can handle Japanese
+  - support [HumanEval-ja](https://huggingface.co/datasets/HachiML/humaneval-ja-v0.6)
 
 - **support vLLM**
-  - you can reduce inference time via [vLLM](https://github.com/vllm-project/vllm) library
+  - reduce inference time via [vLLM](https://github.com/vllm-project/vllm) library
 
 - **support apply_chat_templates function**
-  - you can directly use the latest LLM without modifying any chat templates
+  - directly use the latest LLM without modifying any chat templates
 
 ## Environment setup
 
