@@ -32,12 +32,14 @@ pip install -e .
 ## How to use
 
 1. You can change default sampling parameter from [here](https://github.com/ohashi3399/human-eval-ja/blob/master/generate_response.py#L14)
+   - `temperature` and `top_p` were referred from the experiment of [WizardCoder](https://arxiv.org/abs/2306.08568) 
+   - `max_tokens` and `repetition_penalty` were experimentally decided
 
 ```python
 def create_sampling_params() -> SamplingParams:
     """サンプリングパラメータを設定する"""
     return SamplingParams(
-        max_tokens=2048, temperature=0.0, top_p=1.0, repetition_penalty=1.05
+        max_tokens=2048, temperature=0.2, top_p=0.95, repetition_penalty=1.05
     )
 ```
 
