@@ -1,3 +1,4 @@
+import os
 import argparse
 import torch
 from transformers import AutoTokenizer
@@ -63,6 +64,11 @@ def main():
     parser.add_argument("--num_trial", type=int, default=1)
     args = parser.parse_args()
 
+    # 出力ディレクトリの作成
+    stem = args.model_name.split("/")[-1]
+    out_dir = f"./out/{stem}"
+    os.makedirs(out_dir, exist_ok=True)
+
     # 問題を読み込む
     problems = read_problems()
 
@@ -88,7 +94,7 @@ def main():
         total_samples.extend(samples)
 
     # 結果を書き込む
-    write_jsonl(f"./samples_at_{args.num_trial}.jsonl", total_samples)
+    write_jsonl(f"{out_dir}/samples_at_{args.num_trial}.jsonl", total_samples)
 
 
 if __name__ == "__main__":
