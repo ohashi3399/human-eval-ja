@@ -2,3 +2,4 @@ tqdm
 fire
 numpy
 vllm
+seaborn

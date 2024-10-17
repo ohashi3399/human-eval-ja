@@ -44,11 +44,19 @@ def create_sampling_params() -> SamplingParams:
 ```
 
 1. Edit `human-eval-ja.sh` like below.
+- You can change just model_name or add other models
 
 ```sh
 #!/bin/bash
 
 model_name="llm-jp/llm-jp-3-1.8b-instruct"
+stem="${model_name##*/}"
+output_file="./out/${stem}/samples_at_10.jsonl"
+
+python generate_response.py --model_name $model_name --num_trial 10
+evaluate_functional_correctness $output_file
+
+model_name="nvidia/Nemotron-Mini-4B-Instruct"
 stem="${model_name##*/}"
 output_file="./out/${stem}/samples_at_10.jsonl"
 
@@ -72,6 +80,16 @@ source human-eval-ja.sh
 model_name,pass@1,pass@10
 llm-jp-3-1.8b-instruct,0.016463414634146342,0.07317073170731707
 ```
+
+4. Aggregate evaluation summary
+
+```sh
+source summary.sh
+```
+
+- You can see performance graph like below
+
+![chart](./model_performance_comparison.png)
 
 ## Citation
 
