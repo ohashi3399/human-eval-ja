@@ -9,7 +9,7 @@ from typing import List, Dict
 
 def create_llm(model_name) -> LLM:
     """LLMインスタンスを作成する"""
-    return LLM(model_name, dtype="bfloat16", trust_remote_code=True)
+    return LLM(model_name, dtype="bfloat16", trust_remote_code=True, max_model_len=2048)
 
 
 def create_sampling_params() -> SamplingParams:
