@@ -89,7 +89,7 @@ source summary.sh
 
 - You can see performance graph like below
 
-![chart](./model_performance_comparison.png)
+![chart](./models_performance.png)
 
 ## Citation
 
