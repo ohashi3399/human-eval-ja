@@ -7,9 +7,6 @@ from human_eval.data import write_jsonl, read_problems
 from typing import List, Dict
 
 
-CALM2_CHAT_TEMPLATE = "{% for message in messages %}{% if message['role'] == 'user' %}{{ 'USER: ' + message['content'] + '\\n'}}{% elif message['role'] == 'system' %}{{ '以下は、タスクを説明する指示です。要求を適切に満たす応答を書きなさい。\\n' }}{% elif message['role'] == 'assistant' %}{{ 'ASSISTANT: ' + message['content'] + eos_token  + '\\n'}}{% endif %}{% if loop.last and add_generation_prompt %}{{ 'ASSISTANT: ' }}{% endif %}{% endfor %}"
-
-
 def create_llm(model_name) -> LLM:
     """LLMインスタンスを作成する"""
     return LLM(model_name, dtype="bfloat16", trust_remote_code=True, max_model_len=2048)
